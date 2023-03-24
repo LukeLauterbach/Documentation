@@ -1,9 +1,13 @@
 # Disabling NTLM - DRAFT
 
 ## Description
-In most Windows environments, Kerberos is the primary way hosts authenticate. However, the default Active Directory configuration has NTLM authentication enabled, allowing legacy hosts and applications to continue authentication. NTLM authentication is problematic for Systems Administrators who are looking to secure their Active Directory environment ([Further Reading](https://www.crowdstrike.com/cybersecurity-101/ntlm-windows-new-technology-lan-manager/#:~:text=NTLM%20was%20subject%20to%20several,protect%20it%20from%20cracking%20techniques.)).
+In modern Windows environments, Kerberos is the primary way hosts authenticate. However, the default Active Directory configuration has NTLM authentication enabled, allowing legacy hosts and applications to continue authentication. NTLM authentication is problematic for Systems Administrators who are looking to secure their Active Directory environment ([Further Reading](https://www.crowdstrike.com/cybersecurity-101/ntlm-windows-new-technology-lan-manager/#:~:text=NTLM%20was%20subject%20to%20several,protect%20it%20from%20cracking%20techniques.)).
 
+#### NTLM Enabled
 ![image](https://user-images.githubusercontent.com/104774644/227614137-6f5ada6a-e44a-43b2-b5ab-3be3701f403c.png)
+#### NTLM Disabled
+![image](https://user-images.githubusercontent.com/104774644/227618022-c5da7615-c8df-427f-a4fe-214cd5d0d3f9.png)
+
 
 Notibly, having NTLM authentication enabled allows attackers to easily perform pass-the-hash attacks. Even in an environment with NTLM disabled, NTLM hashes can be used to obtain Kerberos tickets. But not all tools support Kerberos authentication, limiting a potential attacker's ability to use publicly available tools.
 
